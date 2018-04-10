@@ -1,0 +1,101 @@
+body 
+{
+   font: 13px; 
+   background: #ADD8E6;
+}
+*
+{ 
+	margin: 10; 
+	padding: 10; 
+	box-sizing: border-box; 
+}
+/*css for h1 element*/
+#p
+{ 
+	position: fixed; 
+	bottom: 90%; 
+	left: 42%;  
+	color: green; 
+}
+/*css for nickname input*/
+#name 
+{ 
+	position: fixed; 
+	bottom: 60%; 
+	left: 35%; 
+	padding: 10px; 
+	width: 30%; 
+	margin-right: .5%; 
+}
+/*css for enter button*/
+#enter 
+{ 
+	cursor:pointer; 
+	position: fixed; 
+	bottom: 50%; 
+	left:45%; 
+	width: 9%; 
+	background: green; 
+	border-radius: 25px; 
+	border: none;  
+	padding: 10px; 
+}
+/*css for textarea*/
+#textarea 
+{ 
+	position: fixed; 
+	bottom: 0; 
+	left: 25%; 
+	border: 0;  
+	padding: 5px; 
+	width: 50%;
+    height: 4%; 
+    resize: none;
+    border-radius: 25px;
+	margin-bottom: 2px; 
+	margin-right: .5%; 
+}
+/*css for send button*/
+#b 
+{ 
+	cursor:pointer; 
+	position: fixed; 
+	bottom: 0; 
+	left:75%; 
+	width: 9%; 
+	background: green; 
+	border-radius: 25px; 
+	border: none; 
+	margin-bottom: 2px; 
+	padding: 5px; 
+}
+/*css for ul*/
+#messages 
+{ 
+	background: #3b5998; 
+	position: fixed; 
+	list-style-type: none; 
+	overflow: auto;  
+	border: 2px solid gold; 
+	margin: 0; padding: 0; 
+	width:40%; 
+	top: 7%;
+	height:88%; 
+	left: 30%;
+}
+/*css for ul-li*/
+#messages li 
+{ 
+	position: relative;  
+	margin: 10px 10px 10px 10px ;
+	padding: 10px 10px 10px 10px; 
+}
+/*css for ul-li-span*/
+#messages span 
+{ 
+	position: relative;  
+	background: lightgreen; 
+	border-radius: 25px; 
+	margin-bottom: 10px; 
+	padding: 5px 10px 5px 10px; 
+}

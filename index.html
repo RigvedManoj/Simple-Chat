@@ -1,72 +1,16 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Socket.IO chat</title>
-    <style>
-      * { margin: 10; padding: 10; box-sizing: border-box; }
-      body { font: 13px; background: #ADD8E6;}
-      #p{ position: fixed; bottom: 92%; left: 42%;  color: green; }
-      #name { position: fixed; bottom: 60%; left: 35%; padding: 10px; width: 30%; margin-right: .5%; }
-      #enter { cursor:pointer; position: fixed; bottom: 50%; left:45%; width: 9%; background: green; border-radius: 25px; border: none;  padding: 10px; }
-      #m { position: fixed; bottom: 0; left: 25%; border: 0;  padding: 5px; width: 50%; margin-bottom: 2px; margin-right: .5%; }
-      #b { cursor:pointer; position: fixed; bottom: 0; left:75%; width: 9%; background: green; border-radius: 25px; border: none; margin-bottom: 2px; padding: 5px; }
-      #messages { background: #3b5998; position: fixed; list-style-type: none; overflow: auto;  border: 2px solid gold; margin: 0; padding: 0; width:40%; top: 5%;height:90%; left: 30%;}
-      #messages li { position: relative;  padding: 10px 10px 10px 10px; }
-      #messages span { position: relative;  background: lightgreen; border-radius: 25px; padding: 5px 10px 5px 10px; }
-    </style>
-  </head>
-  <h1 id="p">Simple Chat</h1>
-  <div id="demo">
-<input id="name" placeholder="NickName" />
-<button id="enter" onclick="run()">Enter</button>
+<head>
+	<title>Socket.IO chat</title>
+	<link type="text/css" rel="stylesheet" href="css/index.css">
+</head>
+<h1 id="p">Simple Chat</h1>
+<div id="demo">
+	<input id="name" placeholder="NickName" />
+	<button id="enter" onclick="run()">Enter</button>
 </div>
 <script src="/socket.io/socket.io.js"></script>
-<script>
-  var socket = io();
-  var name="hello";
-  function run() {
-    name = document.getElementById("name").value;
-      if (name != "") {
-        socket.emit("join", name);
-        document.getElementById("demo").innerHTML = "";
-        var ul = document.createElement("ul");
-        ul.id="messages";
-        document.getElementById("main").appendChild(ul);
-        var input=document.createElement("input");
-        input.id="m";
-        var button=document.createElement("button");
-        button.id="b";
-        button.innerHTML="send";
-        button.onclick=submit;
-        document.getElementById("main").appendChild(input);
-        document.getElementById("main").appendChild(button);
-      }
-  }
-    function submit(){
-      value = document.getElementById("m").value;
-      document.getElementById("m").value="";
-      socket.emit('chat message',name+": "+value);
-      if(value=="")
-      return false;
-    }
-    socket.on('chat message', function(msg){
-      var span=document.createElement("span");
-      var li=document.createElement("li");
-      var br=document.createElement("br");
-      span.innerHTML=msg;
-      var l=msg.split(":");
-      if(l[0]===name)
-        {
-          span.style.cssFloat="right";
-          span.style.background="red";
-        }
-      li.appendChild(span);
-      li.appendChild(br);
-      var ul=document.getElementById("messages");
-      ul.appendChild(li);
-      });
-</script>
-  <body id="main">
-  </body>
+<script src="js/base.js"></script>
+<body id="main">
+</body>
 </html>
-    
