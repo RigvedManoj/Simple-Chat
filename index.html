@@ -5,18 +5,18 @@
     <style>
       * { margin: 10; padding: 10; box-sizing: border-box; }
       body { font: 13px; background: #ADD8E6;}
-      #p{ position: fixed; bottom: 75%; left: 42%;  color: green; }
+      #p{ position: fixed; bottom: 92%; left: 42%;  color: green; }
       #name { position: fixed; bottom: 60%; left: 35%; padding: 10px; width: 30%; margin-right: .5%; }
-      #enter { position: fixed; bottom: 50%; left:45%; width: 9%; background: green; border-radius: 25px; border: none;  padding: 10px; }
-      #m { position: fixed; bottom: 0; left: 5%; border: 0; border-radius: 25px; padding: 10px; width: 80%; margin-bottom: 5px; margin-right: .5%; }
-      #b { position: fixed; bottom: 0; left:85%; width: 9%; background: green; border-radius: 25px; border: none; margin-bottom: 5px; padding: 10px; }
-      #messages { position: fixed; list-style-type: none; overflow: auto;  border: 2px solid gold; margin: 0; padding: 0; width:40%; height:90%; left: 30%;}
+      #enter { cursor:pointer; position: fixed; bottom: 50%; left:45%; width: 9%; background: green; border-radius: 25px; border: none;  padding: 10px; }
+      #m { position: fixed; bottom: 0; left: 25%; border: 0;  padding: 5px; width: 50%; margin-bottom: 2px; margin-right: .5%; }
+      #b { cursor:pointer; position: fixed; bottom: 0; left:75%; width: 9%; background: green; border-radius: 25px; border: none; margin-bottom: 2px; padding: 5px; }
+      #messages { background: #3b5998; position: fixed; list-style-type: none; overflow: auto;  border: 2px solid gold; margin: 0; padding: 0; width:40%; top: 5%;height:90%; left: 30%;}
       #messages li { position: relative;  padding: 10px 10px 10px 10px; }
       #messages span { position: relative;  background: lightgreen; border-radius: 25px; padding: 5px 10px 5px 10px; }
     </style>
   </head>
-  <div id="demo">
   <h1 id="p">Simple Chat</h1>
+  <div id="demo">
 <input id="name" placeholder="NickName" />
 <button id="enter" onclick="run()">Enter</button>
 </div>
@@ -57,10 +57,11 @@
       var l=msg.split(":");
       if(l[0]===name)
         {
-          span.style.left="80%";
+          span.style.cssFloat="right";
           span.style.background="red";
         }
       li.appendChild(span);
+      li.appendChild(br);
       var ul=document.getElementById("messages");
       ul.appendChild(li);
       });
