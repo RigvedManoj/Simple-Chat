@@ -9,7 +9,7 @@ Images have been added below:
 ![alt text](/basic.png)
 3.User1
 ![alt text](/user1.png)
-2.User
+2.User2
 ![alt text](/user2.png)
 
 *used html,javascript,css,nodejs,socket.io*
